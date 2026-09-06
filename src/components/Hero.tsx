@@ -6,59 +6,55 @@ import { fadeInUp, staggerContainer } from "@/lib/motion";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen bg-white text-black flex flex-col justify-center overflow-hidden">
-      
-      {/* Center Typography Lockup */}
-      <motion.div
-        className="w-full flex items-center justify-center px-4"
+    <section className="relative min-h-screen bg-ed-offwhite text-ed-black pt-32 pb-20 flex flex-col justify-center">
+      <motion.div 
+        className="container-spacious grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center"
         initial="hidden"
         animate="visible"
         variants={staggerContainer}
       >
-        <motion.h1 
-          className="heading-pk text-[12vw] tracking-tighter flex items-center whitespace-nowrap"
-          variants={fadeInUp}
-        >
-          <span>Abishek</span>
-          <span className="mx-[1vw] relative w-[1.2em] h-[0.7em] flex-shrink-0 grayscale">
+        
+        {/* LEFT COLUMN: Massive Typography */}
+        <div className="col-span-1 lg:col-span-8 flex flex-col justify-center">
+          <motion.div variants={fadeInUp} className="font-editorial-mono mb-6 text-ed-grey-dark flex items-center gap-4">
+            <span className="w-8 h-[1px] bg-ed-grey-dark"></span>
+            SOFTWARE ENGINEER PORTFOLIO &copy; 2026
+          </motion.div>
+          <motion.h1 
+            variants={fadeInUp} 
+            // clamp size so it looks great on mobile without overflowing
+            className="font-editorial-display text-[clamp(4rem,10vw,11rem)] flex flex-col leading-[0.9]"
+          >
+            <span>ENGINEER</span>
+            <span>BUILDER</span>
+            <span className="text-ed-accent">CREATOR</span>
+          </motion.h1>
+        </div>
+
+        {/* RIGHT COLUMN: Image & Intro */}
+        <div className="col-span-1 lg:col-span-4 flex flex-col gap-10">
+          
+          {/* Portrait Image */}
+          <motion.div 
+            variants={fadeInUp}
+            className="relative w-full aspect-[4/5] bg-ed-grey overflow-hidden rounded-sm"
+          >
             <Image 
               src="/images/media/abishek_portrait.jpg" 
               alt="Abishek portrait" 
               fill 
-              className="object-cover" 
+              className="img-editorial grayscale hover:grayscale-0 transition-all duration-700" 
             />
-          </span>
-          <span>P S</span>
-        </motion.h1>
-      </motion.div>
+          </motion.div>
 
-      {/* Bottom Pinned Info Strip */}
-      <motion.div 
-        className="absolute bottom-8 left-0 w-full px-8 flex justify-between items-end body-pk text-sm"
-        initial="hidden"
-        animate="visible"
-        variants={fadeInUp}
-      >
-        <div className="flex items-end gap-2">
-          {/* Equalizer Icon Fake */}
-          <div className="flex items-end gap-[2px] h-4 mb-1">
-            <div className="w-1 bg-black h-full animate-[pulse_1s_ease-in-out_infinite]" />
-            <div className="w-1 bg-black h-2 animate-[pulse_1.2s_ease-in-out_infinite_0.2s]" />
-            <div className="w-1 bg-black h-3 animate-[pulse_0.8s_ease-in-out_infinite_0.4s]" />
-            <div className="w-1 bg-black h-1 animate-[pulse_1.5s_ease-in-out_infinite]" />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-black/40 text-xs">Now building</span>
-            <span className="font-bold tracking-tight">Systems At Scale</span>
-          </div>
-        </div>
-
-        <div className="max-w-xs text-center hidden md:block leading-tight font-medium">
-          Explore his software, open-source releases, system architectures and a body of work shaped by years of engineering.
-        </div>
-
-        <div className="font-bold tracking-tight cursor-pointer hover:opacity-50">
-          Sound OFF
+          {/* Intro Text */}
+          <motion.div variants={fadeInUp} className="flex flex-col gap-4">
+            <div className="font-editorial-mono text-ed-accent">01 / INTRO</div>
+            <p className="font-editorial-body text-lg text-ed-grey-dark max-w-md">
+              Abishek P S is a software engineer building distributed systems, developer tools, and complex architectures. Based in Hyderabad, India.
+            </p>
+          </motion.div>
+          
         </div>
       </motion.div>
     </section>

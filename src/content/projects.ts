@@ -36,7 +36,7 @@ export const projects: Project[] = [
     metrics: '1.8K GitHub stars · Used by 12 teams',
     github: 'https://github.com',
     live: 'https://example.com',
-    image: '/images/projects/radix-system.jpg',
+    image: '/images/projects/radix.jpg',
   },
   {
     id: 'neural-search',
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     stack: ['Python', 'FastAPI', 'PyTorch', 'FAISS', 'Kubernetes'],
     metrics: 'Serving 2M queries/day',
     github: 'https://github.com',
-    image: '/images/projects/neural-search.jpg',
+    image: '/images/projects/neural.jpg',
   },
   {
     id: 'infra-cli',
@@ -60,7 +60,7 @@ export const projects: Project[] = [
     stack: ['Rust', 'Terraform', 'AWS', 'GitHub Actions'],
     metrics: '900+ GitHub stars',
     github: 'https://github.com',
-    image: '/images/projects/infra-cli.jpg',
+    image: '/images/projects/infra.jpg',
   },
   {
     id: 'realtime-collab',
@@ -71,6 +71,6 @@ export const projects: Project[] = [
     role: 'Co-creator',
     stack: ['TypeScript', 'Yjs', 'WebRTC', 'Node.js', 'PostgreSQL'],
     live: 'https://example.com',
-    image: '/images/projects/collab-editor.jpg',
+    image: '/images/projects/collab.jpg',
   },
 ];

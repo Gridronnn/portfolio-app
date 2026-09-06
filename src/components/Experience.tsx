@@ -6,59 +6,63 @@ import { experiences } from "@/content/experience";
 
 export default function Experience() {
   return (
-    <section id="experience" className="w-full bg-[#9bf68c] text-black border-b border-black">
-      
-      {/* Table Header */}
-      <div className="w-full grid grid-cols-[15%_40%_35%_10%] px-8 py-4 border-b border-black font-sans font-black text-sm tracking-wide uppercase text-black/60">
-        <div>DATE / YEAR</div>
-        <div>COMPANY / ROLE</div>
-        <div>LOCATION</div>
-        <div className="text-right">DETAILS</div>
-      </div>
+    <section id="experience" className="bg-ed-offwhite text-ed-black py-24 lg:py-40">
+      <div className="container-spacious">
+        
+        {/* Editorial Header */}
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 mb-16 lg:mb-24">
+          <div className="font-editorial-mono text-ed-accent lg:w-32 pt-2">
+            04 / CAREER
+          </div>
+          <h2 className="font-editorial-display text-4xl lg:text-7xl">
+            PROFESSIONAL HISTORY
+          </h2>
+        </div>
 
-      {/* Table Rows (The Experience Items) */}
-      <motion.div
-        className="w-full"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-        variants={staggerContainer}
-      >
-        {experiences.map((exp, idx) => (
-          <motion.div 
-            key={exp.id}
-            variants={fadeInUp}
-            className="w-full grid grid-cols-[15%_40%_35%_10%] px-8 py-6 border-b border-black font-sans font-black text-lg lg:text-xl tracking-wide uppercase hover:bg-black/5 transition-colors cursor-pointer"
-          >
-            <div>{exp.startDate} - {exp.endDate}</div>
-            <div>
-              {exp.company} <span className="font-bold opacity-70">— {exp.role}</span>
-            </div>
-            <div>{exp.location}</div>
-            <div className="text-right">VIEW</div>
-          </motion.div>
-        ))}
-      </motion.div>
-
-      {/* View All Block */}
-      <div className="w-full px-8 py-8 border-b border-black">
-        <a 
-          href="#" 
-          className="flex items-center justify-center w-full py-16 border border-black hover:bg-black hover:text-[#9bf68c] rounded-2xl transition-all"
+        {/* Experience Feed */}
+        <motion.div
+          className="w-full flex flex-col border-t border-ed-grey"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={staggerContainer}
         >
-          <span className="font-sans font-black text-lg tracking-wide uppercase">VIEW ALL EXPERIENCE</span>
-        </a>
-      </div>
+          {experiences.map((exp) => (
+            <motion.div 
+              key={exp.id}
+              variants={fadeInUp}
+              className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 py-12 lg:py-16 border-b border-ed-grey hover:bg-ed-grey/10 transition-colors group cursor-pointer"
+            >
+              {/* Year Column */}
+              <div className="col-span-1 lg:col-span-3 flex items-start lg:items-center">
+                <span className="font-editorial-display text-4xl lg:text-5xl text-ed-grey-dark group-hover:text-ed-accent transition-colors">
+                  {exp.startDate}
+                  <span className="text-xl lg:text-2xl ml-2 text-ed-grey">— {exp.endDate === "Present" ? "NOW" : exp.endDate}</span>
+                </span>
+              </div>
 
-      {/* Green Image Block (Screenshot 3 style) */}
-      <div className="w-full h-[60vh] grid grid-cols-2">
-        <div className="bg-[#9bf68c]" />
-        <div 
-          className="h-full w-full bg-cover bg-center mix-blend-multiply opacity-90"
-          style={{ backgroundImage: 'url(/images/media/panel_1.jpg)', backgroundColor: '#9bf68c' }}
-        />
-      </div>
+              {/* Role & Company */}
+              <div className="col-span-1 lg:col-span-4 flex flex-col justify-center">
+                <h4 className="font-editorial-display text-3xl lg:text-4xl mb-3">{exp.company}</h4>
+                <p className="font-editorial-mono text-sm text-ed-accent">{exp.role}</p>
+              </div>
 
+              {/* Location & Details */}
+              <div className="col-span-1 lg:col-span-5 flex flex-col justify-center">
+                <p className="font-editorial-body text-ed-grey-dark mb-6 leading-relaxed">
+                  {exp.bullets[0]}
+                </p>
+                <p className="font-editorial-mono text-xs text-ed-grey-dark uppercase tracking-widest flex items-center gap-2">
+                  <span>{exp.location}</span>
+                  <span className="w-4 h-[1px] bg-ed-grey-dark"></span>
+                  <span className="group-hover:text-ed-accent transition-colors">READ FULL &rarr;</span>
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+      </div>
     </section>
   );
 }

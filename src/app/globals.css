@@ -1,33 +1,33 @@
 @import "tailwindcss";
 
 /* ========================================================================
-   DESIGN TOKENS - PAUL KALKBRENNER CLONE
+   DESIGN TOKENS - SPACIOUS EDITORIAL
    ======================================================================== */
 
 :root {
   /* Core Colors */
-  --pk-black: #050505;
-  --pk-white: #FFFFFF;
-  --pk-grey-light: #d6d6d6;
-  --pk-grey-dark: #a9a9a9;
-  --pk-orange: #f25b2a;
-  --pk-green: #90ee90;
+  --ed-offwhite: #F4F1EA;
+  --ed-black: #111111;
+  --ed-grey: #E5E5E5;
+  --ed-grey-dark: #666666;
+  --ed-accent: #C65D3B; /* Terracotta / Burnt Orange */
   
   /* Fonts */
-  --font-display: var(--font-inter), "Inter", sans-serif;
+  --font-display: var(--font-anton), "Anton", sans-serif;
   --font-body: var(--font-inter), "Inter", sans-serif;
+  --font-mono: var(--font-space-mono), "Space Mono", monospace;
 }
 
 @theme inline {
-  --color-pk-black: var(--pk-black);
-  --color-pk-white: var(--pk-white);
-  --color-pk-grey-light: var(--pk-grey-light);
-  --color-pk-grey-dark: var(--pk-grey-dark);
-  --color-pk-orange: var(--pk-orange);
-  --color-pk-green: var(--pk-green);
+  --color-ed-offwhite: var(--ed-offwhite);
+  --color-ed-black: var(--ed-black);
+  --color-ed-grey: var(--ed-grey);
+  --color-ed-grey-dark: var(--ed-grey-dark);
+  --color-ed-accent: var(--ed-accent);
   
   --font-display: var(--font-display);
   --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
 }
 
 /* ========================================================================
@@ -41,22 +41,22 @@
 }
 
 html {
-  background-color: var(--pk-white);
-  color: var(--pk-black);
+  background-color: var(--ed-offwhite);
+  color: var(--ed-black);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
-  scroll-behavior: auto;
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--pk-white);
+  background-color: var(--ed-offwhite);
   min-height: 100vh;
   overflow-x: hidden;
 }
 
 ::selection {
-  background-color: var(--pk-black);
-  color: var(--pk-white);
+  background-color: var(--ed-accent);
+  color: var(--ed-offwhite);
 }
 
 ::-webkit-scrollbar {
@@ -64,111 +64,57 @@ body {
 }
 
 /* ========================================================================
-   CUSTOM UTILITIES FOR UI CLONE
+   TYPOGRAPHY UTILITIES
    ======================================================================== */
 
-.heading-pk {
+.font-editorial-display {
   font-family: var(--font-display);
-  font-weight: 900;
-  letter-spacing: -0.05em;
-  line-height: 0.85;
+  font-weight: 400; 
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: 0.01em;
 }
 
-.body-pk {
+.font-editorial-body {
   font-family: var(--font-body);
-  font-weight: 600;
-  line-height: 1.2;
+  font-weight: 400;
+  line-height: 1.7; /* Increased for readability */
   letter-spacing: -0.01em;
 }
 
-/* Grid layout for "The Pulse" typography section */
-.pulse-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: minmax(150px, auto);
-  border-top: 1px solid var(--pk-black);
-  border-left: 1px solid var(--pk-black);
+.font-editorial-mono {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
 }
 
-.pulse-grid > div {
-  border-bottom: 1px solid var(--pk-black);
-  border-right: 1px solid var(--pk-black);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
+/* ========================================================================
+   LAYOUT UTILITIES
+   ======================================================================== */
+
+/* Generous centered container */
+.container-spacious {
+  width: 100%;
+  max-w: 80rem; /* 1280px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem; /* 24px mobile */
+  padding-right: 1.5rem;
 }
 
-/* Big text spans across columns in the pulse grid */
-.pulse-text {
-  font-size: clamp(4rem, 10vw, 8rem);
-  font-weight: 900;
-  letter-spacing: -0.05em;
-  line-height: 0.8;
+@media (min-width: 1024px) {
+  .container-spacious {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 }
 
-/* Big black dot */
-.pulse-dot {
-  width: clamp(2rem, 5vw, 4rem);
-  height: clamp(2rem, 5vw, 4rem);
-  background-color: var(--pk-black);
-  border-radius: 50%;
-}
-
-/* Marquee Animation */
-.marquee-container {
-  display: flex;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.marquee-content {
-  display: flex;
-  animation: marquee 30s linear infinite;
-}
-
-@keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
-}
-
-/* Rotating Vinyl */
-.spin-slow {
-  animation: spin 10s linear infinite;
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* Pixel Transition Grid Mask */
-/* 
-  We create a CSS grid overlay that has grey blocks filling in spaces.
-  The image shows a stair-step grey pattern over a black background or image.
-*/
-.pixel-mask-grid {
-  display: grid;
-  grid-template-columns: repeat(20, 1fr);
-  grid-template-rows: repeat(10, 1fr);
+/* Image Utilities */
+.img-editorial {
+  object-fit: cover;
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-}
-
-.pixel-block {
-  background-color: var(--pk-grey-light);
-}
-
-/* Giant Image Cutout Text */
-.text-mask-image {
-  background-size: cover;
-  background-position: center;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  display: inline-block;
+  filter: saturate(1.1) contrast(1.05); 
 }
