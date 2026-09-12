@@ -30,7 +30,14 @@ function ProjectLayoutA({ project }: { project: Project }) {
               <span key={tech}>{tech}</span>
             ))}
           </div>
-          <a href={project.github || "#"} className="hover:text-ed-accent shrink-0">VIEW PROJECT &rarr;</a>
+          <a 
+            href={project.github || "#"} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="hover:text-ed-accent shrink-0"
+          >
+            VIEW PROJECT &rarr;
+          </a>
         </div>
       </div>
 
@@ -82,6 +89,8 @@ function ProjectLayoutB({ project }: { project: Project }) {
           <div>
             <a 
               href={project.github || "#"} 
+              target="_blank" 
+              rel="noopener noreferrer" 
               className="inline-block border border-ed-offwhite px-8 py-4 font-editorial-mono text-sm hover:bg-ed-offwhite hover:text-ed-accent transition-colors"
             >
               EXPLORE ARCHITECTURE

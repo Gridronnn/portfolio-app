@@ -53,6 +53,8 @@ export default function Footer() {
               <a
                 key={social.label}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="font-editorial-mono text-sm hover:text-ed-black transition-colors"
               >
                 {social.label.toUpperCase()}
