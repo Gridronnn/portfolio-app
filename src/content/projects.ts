@@ -71,7 +71,7 @@ export const projects: Project[] = [
     stack: ['Python', 'React', 'Next.js', 'AI Agents', 'REST API'],
     metrics: 'AI-Assisted Workflow Prototype',
     github: 'https://github.com/Gridronnn',
-    image: '/images/projects/fileflow_preview.png',
+    image: '/images/projects/fileflow_preview.svg',
     bullets: [
       'Developed and deployed an AI-focused file management web application prototype exploring intelligent file organization and AI-assisted workflows.',
       'Engineered automated categorization pipelines and natural language file retrieval.',

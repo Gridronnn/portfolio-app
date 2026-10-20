@@ -65,7 +65,6 @@ export default function Projects() {
                         src={project.image}
                         alt={`${project.title} Preview 1`}
                         fill
-                        unoptimized
                         className="object-cover object-top hover:scale-105 transition-transform duration-500"
                       />
                     </div>
@@ -75,7 +74,6 @@ export default function Projects() {
                           src={project.secondaryImage}
                           alt={`${project.title} Preview 2`}
                           fill
-                          unoptimized
                           className="object-cover object-top hover:scale-105 transition-transform duration-500"
                         />
                       </div>

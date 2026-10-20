@@ -8,7 +8,6 @@ import {
   GitBranch,
   Code2,
   BookOpen,
-  Layers,
   Mail,
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
@@ -68,9 +67,6 @@ export default function Nav() {
         </a>
         <a data-tooltip="Writing" href="#blog" aria-label="Go to Writing section">
           <BookOpen className="w-5 h-5" />
-        </a>
-        <a data-tooltip="Architecture" href="#media" aria-label="Go to Architecture section">
-          <Layers className="w-5 h-5" />
         </a>
         <a data-tooltip="Contact" href="#contact" aria-label="Go to Contact section">
           <Mail className="w-5 h-5" />
