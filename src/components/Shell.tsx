@@ -11,18 +11,9 @@ interface ShellProps {
   children: React.ReactNode;
 }
 
-/**
- * Shell wraps the entire page with:
- * - Lenis smooth scroll
- * - Custom terminal cursor
- * - Preloader (terminal boot)
- * - Fixed navigation
- * - Footer
- */
 export default function Shell({ children }: ShellProps) {
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // Initialize smooth scroll and custom cursor
   useSmoothScroll();
   useCustomCursor();
 
@@ -36,10 +27,12 @@ export default function Shell({ children }: ShellProps) {
         }`}
       >
         <Nav />
-        <main className="relative z-10" role="main">
-          {children}
-        </main>
-        <Footer />
+        <div className="resume-content">
+          <main className="max-w-5xl mx-auto px-6 md:px-12" role="main">
+            {children}
+            <Footer />
+          </main>
+        </div>
       </div>
     </>
   );

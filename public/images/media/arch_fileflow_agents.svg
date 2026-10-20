@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <filter id="glow-ai" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#0F172A" flood-opacity="0.05" />
+    </filter>
+    <linearGradient id="primary-grad-ai" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5" />
+      <stop offset="100%" stop-color="#6366F1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="800" height="500" rx="8" fill="#FAFAFA" stroke="#E5E5E5" stroke-width="1.5" />
+
+  <!-- Blueprint Pattern -->
+  <pattern id="grid-pattern-ai" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#EAEAEA" stroke-width="0.75" />
+  </pattern>
+  <rect width="800" height="500" fill="url(#grid-pattern-ai)" opacity="0.7" />
+
+  <!-- Header -->
+  <g transform="translate(32, 28)">
+    <rect width="82" height="20" rx="4" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="1" />
+    <text x="41" y="14" font-family="'IBM Plex Mono', monospace" font-size="9" font-weight="600" fill="#4F46E5" text-anchor="middle">SPEC // 02</text>
+    <text x="96" y="15" font-family="'IBM Plex Mono', monospace" font-size="14" font-weight="600" fill="#242424">FileFlow AI: Agentic Document Ingestion &amp; Classification Pipeline</text>
+  </g>
+
+  <!-- 4 Process Stages -->
+  <!-- STAGE 1: INGESTION QUEUE -->
+  <g transform="translate(40, 80)">
+    <rect width="155" height="340" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" filter="url(#glow-ai)" />
+    <rect width="155" height="38" rx="8" fill="#F8FAFC" />
+    <path d="M 0 38 L 155 38" stroke="#E2E8F0" stroke-width="1" />
+    <circle cx="16" cy="19" r="4.5" fill="#64748B" />
+    <text x="28" y="23" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="600" fill="#0F172A">1. Ingest Queue</text>
+
+    <g transform="translate(12, 50)">
+      <rect width="131" height="52" rx="5" fill="#F1F5F9" />
+      <text x="10" y="20" font-family="'IBM Plex Mono', monospace" font-size="9" font-weight="600" fill="#334155">Multi-Format</text>
+      <text x="10" y="38" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#64748B">PDF, DOCX, CSV, PY</text>
+    </g>
+
+    <g transform="translate(12, 114)">
+      <rect width="131" height="64" rx="5" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1" />
+      <text x="10" y="20" font-family="'IBM Plex Mono', monospace" font-size="9" font-weight="600" fill="#1D4ED8">Stream Ingestion</text>
+      <text x="10" y="38" font-family="system-ui, sans-serif" font-size="8.5" fill="#3B82F6">Multipart S3 Upload</text>
+      <text x="10" y="52" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#2563EB">SHA-256 Checksum</text>
+    </g>
+
+    <g transform="translate(12, 190)">
+      <rect width="131" height="118" rx="5" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" />
+      <text x="10" y="20" font-family="'IBM Plex Mono', monospace" font-size="9" font-weight="600" fill="#475569">Async Dispatch</text>
+      <text x="10" y="42" font-family="system-ui, sans-serif" font-size="8.5" fill="#64748B">&#8226; Deduplication check</text>
+      <text x="10" y="62" font-family="system-ui, sans-serif" font-size="8.5" fill="#64748B">&#8226; MIME verification</text>
+      <text x="10" y="82" font-family="system-ui, sans-serif" font-size="8.5" fill="#64748B">&#8226; Virus scanning</text>
+      <text x="10" y="102" font-family="system-ui, sans-serif" font-size="8.5" fill="#64748B">&#8226; Queue ack event</text>
+    </g>
+  </g>
+
+  <!-- ARROW 1 -->
+  <line x1="195" y1="210" x2="225" y2="210" stroke="#6366F1" stroke-width="2" />
+  <polygon points="225,210 218,206 218,214" fill="#6366F1" />
+
+  <!-- STAGE 2: OCR & EXTRACTION -->
+  <g transform="translate(225, 80)">
+    <rect width="155" height="340" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" filter="url(#glow-ai)" />
+    <rect width="155" height="38" rx="8" fill="#EEF2FF" />
+    <path d="M 0 38 L 155 38" stroke="#E0E7FF" stroke-width="1" />
+    <circle cx="16" cy="19" r="4.5" fill="#4F46E5" />
+    <text x="28" y="23" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="600" fill="#312E81">2. Parse &amp; OCR</text>
+
+    <g transform="translate(12, 50)">
+      <rect width="131" height="64" rx="5" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" />
+      <text x="10" y="20" font-family="'IBM Plex Mono', monospace" font-size="9" font-weight="600" fill="#0F172A">Optical Character</text>
+      <text x="10" y="38" font-family="system-ui, sans-serif" font-size="8.5" fill="#64748B">Tesseract OCR engine</text>
+      <text x="10" y="52" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#4F46E5">Receipts / Invoices</text>
+    </g>
+
+    <g transform="translate(12, 126)">
+      <rect width="131" height="88" rx="5" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="1" />
+      <text x="10" y="20" font-family="'IBM Plex Mono', monospace" font-size="9" font-weight="600" fill="#3730A3">Semantic Chunking</text>
+      <text x="10" y="40" font-family="system-ui, sans-serif" font-size="8.5" fill="#4F46E5">&#8226; Fixed window 512</text>
+      <text x="10" y="58" font-family="system-ui, sans-serif" font-size="8.5" fill="#4F46E5">&#8226; Overlap 64 tokens</text>
+      <text x="10" y="76" font-family="system-ui, sans-serif" font-size="8.5" fill="#4F46E5">&#8226; Layout preservation</text>
+    </g>
+
+    <g transform="translate(12, 226)">
+      <rect width="131" height="84" rx="5" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1" />
+      <text x="10" y="20" font-family="'IBM Plex Mono', monospace" font-size="9" font-weight="600" fill="#92400E">PII Redactor</text>
+      <text x="10" y="38" font-family="system-ui, sans-serif" font-size="8.5" fill="#B45309">Regex + NER Masking</text>
+      <text x="10" y="54" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#78350F">SSN, Cards, Passwords</text>
+      <text x="10" y="70" font-family="'IBM Plex Mono', monospace" font-size="8" font-weight="600" fill="#15803D">&#8226; Sanitized output</text>
+    </g>
+  </g>
+
+  <!-- ARROW 2 -->
+  <line x1="380" y1="210" x2="410" y2="210" stroke="#6366F1" stroke-width="2" />
+  <polygon points="410,210 403,206 403,214" fill="#6366F1" />
+
+  <!-- STAGE 3: EMBEDDINGS & AGENT ENGINE -->
+  <g transform="translate(410, 80)">
+    <rect width="170" height="340" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" filter="url(#glow-ai)" />
+    <rect width="170" height="38" rx="8" fill="#FAF5FF" />
+    <path d="M 0 38 L 170 38" stroke="#F3E8FF" stroke-width="1" />
+    <circle cx="16" cy="19" r="4.5" fill="#8B5CF6" />
+    <text x="28" y="23" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="600" fill="#581C87">3. Agent Engine</text>
+
+    <g transform="translate(12, 50)">
+      <rect width="146" height="74" rx="5" fill="#FAF5FF" stroke="#E9D5FF" stroke-width="1" />
+      <text x="10" y="20" font-family="'IBM Plex Mono', monospace" font-size="9" font-weight="600" fill="#6B21A8">Dense Vector Embed</text>
+      <text x="10" y="38" font-family="system-ui, sans-serif" font-size="8.5" fill="#7E22CE">1536-dim vector space</text>
+      <text x="10" y="54" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#9333EA">Cosine Similarity Metric</text>
+      <text x="10" y="68" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#10B981">&#8226; HNSW Index</text>
+    </g>
+
+    <g transform="translate(12, 136)">
+      <rect width="146" height="100" rx="5" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" />
+      <text x="10" y="20" font-family="'IBM Plex Mono', monospace" font-size="9" font-weight="600" fill="#0F172A">Classification Agent</text>
+      <text x="10" y="40" font-family="system-ui, sans-serif" font-size="8.5" fill="#475569">&#8226; Multi-label categorization</text>
+      <text x="10" y="58" font-family="system-ui, sans-serif" font-size="8.5" fill="#475569">&#8226; Executive summary synth</text>
+      <text x="10" y="76" font-family="system-ui, sans-serif" font-size="8.5" fill="#475569">&#8226; Deadline &amp; entity parsing</text>
+      <text x="10" y="94" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#059669">&#8226; Confidence: 98.4%</text>
+    </g>
+
+    <g transform="translate(12, 248)">
+      <rect width="146" height="60" rx="5" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1" />
+      <text x="10" y="20" font-family="'IBM Plex Mono', monospace" font-size="9" font-weight="600" fill="#047857">Policy Compliance</text>
+      <text x="10" y="38" font-family="system-ui, sans-serif" font-size="8.5" fill="#065F46">Zero data retention flag</text>
+      <text x="10" y="52" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#059669">Strict Model Isolation</text>
+    </g>
+  </g>
+
+  <!-- ARROW 3 -->
+  <line x1="580" y1="210" x2="610" y2="210" stroke="#6366F1" stroke-width="2" />
+  <polygon points="610,210 603,206 603,214" fill="#6366F1" />
+
+  <!-- STAGE 4: RETRIEVAL & SMART WORKSPACES -->
+  <g transform="translate(610, 80)">
+    <rect width="150" height="340" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" filter="url(#glow-ai)" />
+    <rect width="150" height="38" rx="8" fill="#ECFDF5" />
+    <path d="M 0 38 L 150 38" stroke="#D1FAE5" stroke-width="1" />
+    <circle cx="16" cy="19" r="4.5" fill="#10B981" />
+    <text x="28" y="23" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="600" fill="#065F46">4. Workspace</text>
+
+    <g transform="translate(10, 50)">
+      <rect width="130" height="74" rx="5" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" />
+      <text x="8" y="20" font-family="'IBM Plex Mono', monospace" font-size="9" font-weight="600" fill="#1E293B">Smart Folders</text>
+      <text x="8" y="38" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#6D28D9">&#8226; /Legal_MSA</text>
+      <text x="8" y="52" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#047857">&#8226; /Q3_Tax_Audits</text>
+      <text x="8" y="66" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#1D4ED8">&#8226; /ML_Pipelines</text>
+    </g>
+
+    <g transform="translate(10, 136)">
+      <rect width="130" height="114" rx="5" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="1" />
+      <text x="8" y="20" font-family="'IBM Plex Mono', monospace" font-size="9" font-weight="600" fill="#3730A3">Copilot RAG</text>
+      <text x="8" y="38" font-family="system-ui, sans-serif" font-size="8" fill="#4338CA">Natural language search</text>
+      <text x="8" y="56" font-family="'IBM Plex Mono', monospace" font-size="7.5" fill="#4F46E5">&gt; "Find 2026 SaaS caps"</text>
+      <text x="8" y="74" font-family="system-ui, sans-serif" font-size="8" fill="#047857">Sub-50ms retrieval</text>
+      <text x="8" y="92" font-family="system-ui, sans-serif" font-size="8" fill="#047857">Source citation linking</text>
+      <text x="8" y="106" font-family="'IBM Plex Mono', monospace" font-size="7.5" fill="#059669">&#8226; Exact clause ref</text>
+    </g>
+
+    <g transform="translate(10, 260)">
+      <rect width="130" height="48" rx="5" fill="#F1F5F9" />
+      <text x="8" y="20" font-family="'IBM Plex Mono', monospace" font-size="8.5" font-weight="600" fill="#334155">Sync &amp; Export</text>
+      <text x="8" y="36" font-family="'IBM Plex Mono', monospace" font-size="7.5" fill="#64748B">Webhooks, CSV, JSON</text>
+    </g>
+  </g>
+
+  <!-- Bottom Legend Footer -->
+  <g transform="translate(40, 460)">
+    <text x="0" y="12" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#94A3B8">STATUS: PIPELINE ACTIVE &#8226; ASYNC WORKER POOL &#8226; VECTOR SEARCH EMBEDDINGS</text>
+  </g>
+</svg>

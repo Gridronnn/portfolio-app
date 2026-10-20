@@ -1,53 +1,31 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Anton, Space_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const anton = Anton({
-  weight: "400",
-  variable: "--font-anton",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const spaceMono = Space_Mono({
-  weight: ["400", "700"],
-  variable: "--font-space-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  title: "ABISHEK P S",
-  description: "SOFTWARE ENGINEER. HYDERABAD, INDIA.",
+  title: "Abishek P S | AI-Native Software Engineer & Full-Stack Developer",
+  description:
+    "Computer Science Engineering student at NIET (Anna University). Focused on software development, AI/ML automation, full-stack web development, and problem solving.",
   openGraph: {
-    title: "ABISHEK P S",
-    description: "SOFTWARE ENGINEER. HYDERABAD, INDIA.",
+    title: "Abishek P S | AI-Native Software Engineer & Full-Stack Developer",
+    description:
+      "Computer Science Engineering student at NIET (Anna University). Focused on software development, AI/ML automation, full-stack web development, and problem solving.",
     type: "website",
     locale: "en_US",
-    siteName: "ABISHEK P S",
+    siteName: "Abishek P S",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#F4F1EA",
+  themeColor: "#faf2f0",
   width: "device-width",
   initialScale: 1,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${anton.variable} ${spaceMono.variable}`}
-    >
-      <body className="bg-ed-offwhite text-ed-black antialiased selection:bg-ed-accent selection:text-white">
-        <div className="relative z-10">
+    <html lang="en">
+      <body className="bg-white text-[#212529] font-sans antialiased selection:bg-[#d55121] selection:text-white">
+        <div className="relative min-h-screen">
           {children}
         </div>
       </body>

@@ -1,67 +1,50 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { staggerContainer, fadeInUp } from "@/lib/motion";
 import { experiences } from "@/content/experience";
 
 export default function Experience() {
   return (
-    <section id="experience" className="bg-ed-offwhite text-ed-black py-24 lg:py-40">
-      <div className="container-spacious">
-        
-        {/* Editorial Header */}
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 mb-16 lg:mb-24">
-          <div className="font-editorial-mono text-ed-accent lg:w-32 pt-2">
-            04 / CAREER
-          </div>
-          <h2 className="font-editorial-display text-4xl lg:text-7xl">
-            PROFESSIONAL HISTORY
-          </h2>
-        </div>
+    <section id="experience" className="py-16 md:py-24 border-b border-[#e5e5e5]">
+      <h2 className="font-serif text-3xl md:text-4xl text-[#242424] font-normal tracking-tight">
+        Work Experience
+      </h2>
+      <hr className="my-6 border-[#e5e5e5]" />
 
-        {/* Experience Feed */}
-        <motion.div
-          className="w-full flex flex-col border-t border-ed-grey"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          variants={staggerContainer}
-        >
-          {experiences.map((exp) => (
-            <motion.div 
-              key={exp.id}
-              variants={fadeInUp}
-              className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 py-12 lg:py-16 border-b border-ed-grey hover:bg-ed-grey/10 transition-colors group cursor-pointer"
-            >
-              {/* Year Column */}
-              <div className="col-span-1 lg:col-span-3 flex items-start lg:items-center">
-                <span className="font-editorial-display text-4xl lg:text-5xl text-ed-grey-dark group-hover:text-ed-accent transition-colors">
-                  {exp.startDate}
-                  <span className="text-xl lg:text-2xl ml-2 text-ed-grey">— {exp.endDate === "Present" ? "NOW" : exp.endDate}</span>
-                </span>
-              </div>
+      <div className="space-y-12">
+        {experiences.map((exp, idx) => {
+          const isLast = idx === experiences.length - 1;
 
-              {/* Role & Company */}
-              <div className="col-span-1 lg:col-span-4 flex flex-col justify-center">
-                <h4 className="font-editorial-display text-3xl lg:text-4xl mb-3">{exp.company}</h4>
-                <p className="font-editorial-mono text-sm text-ed-accent">{exp.role}</p>
-              </div>
+          return (
+            <div key={exp.id} className="relative grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
+              {/* Mobile Timeline connector */}
+              <div className="progcirc_md" />
+              {!isLast && <div className="progline_md" />}
 
-              {/* Location & Details */}
-              <div className="col-span-1 lg:col-span-5 flex flex-col justify-center">
-                <p className="font-editorial-body text-ed-grey-dark mb-6 leading-relaxed">
-                  {exp.bullets[0]}
+              {/* Left Column: Organization & Dates */}
+              <div className="md:col-span-4 lg:col-span-3 pl-8 md:pl-0 md:pr-8 md:text-right relative">
+                {/* Desktop Timeline connector */}
+                <div className="progcirc" />
+                {!isLast && <div className="progline" />}
+
+                <p className="minhead text-base md:text-lg">{exp.company}</p>
+                <p className="font-mono text-xs text-[#d55121] mt-1 font-medium">
+                  {exp.startDate} — {exp.endDate}
                 </p>
-                <p className="font-editorial-mono text-xs text-ed-grey-dark uppercase tracking-widest flex items-center gap-2">
-                  <span>{exp.location}</span>
-                  <span className="w-4 h-[1px] bg-ed-grey-dark"></span>
-                  <span className="group-hover:text-ed-accent transition-colors">READ FULL &rarr;</span>
-                </p>
+                <p className="font-sans text-xs text-[#777777] mt-0.5">{exp.location}</p>
               </div>
-            </motion.div>
-          ))}
-        </motion.div>
 
+              {/* Right Column: Role & Details */}
+              <div className="md:col-span-8 lg:col-span-9 pl-8 md:pl-6">
+                <p className="minhead text-base md:text-lg mb-2">{exp.role}</p>
+                <ul className="space-y-2 text-[#444444] text-sm md:text-[0.95rem] leading-relaxed list-disc list-outside ml-4">
+                  {exp.bullets.map((bullet, bIdx) => (
+                    <li key={bIdx}>{bullet}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

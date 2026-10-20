@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <filter id="glow-interactive" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#0F172A" flood-opacity="0.05" />
+    </filter>
+    <linearGradient id="warm-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="800" height="500" rx="8" fill="#FAFAFA" stroke="#E5E5E5" stroke-width="1.5" />
+
+  <!-- Blueprint Pattern -->
+  <pattern id="grid-pattern-engine" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#EAEAEA" stroke-width="0.75" />
+  </pattern>
+  <rect width="800" height="500" fill="url(#grid-pattern-engine)" opacity="0.7" />
+
+  <!-- Header -->
+  <g transform="translate(32, 28)">
+    <rect width="82" height="20" rx="4" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1" />
+    <text x="41" y="14" font-family="'IBM Plex Mono', monospace" font-size="9" font-weight="600" fill="#B45309" text-anchor="middle">SPEC // 03</text>
+    <text x="96" y="15" font-family="'IBM Plex Mono', monospace" font-size="14" font-weight="600" fill="#242424">The Day You Entered the World: Web Audio &amp; Keepsake Engine</text>
+  </g>
+
+  <!-- 3 Main Architecture Layers -->
+  <!-- LAYER 1: Temporal Coordinate & Ephemeris Engine -->
+  <g transform="translate(40, 85)">
+    <rect width="210" height="340" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" filter="url(#glow-interactive)" />
+    <rect width="210" height="42" rx="8" fill="#FEF3C7" />
+    <path d="M 0 42 L 210 42" stroke="#FDE68A" stroke-width="1" />
+    <circle cx="20" cy="21" r="5" fill="#F59E0B" />
+    <text x="34" y="25" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="600" fill="#92400E">1. Astronomical Math</text>
+
+    <g transform="translate(16, 56)">
+      <rect width="178" height="66" rx="6" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1" />
+      <text x="12" y="20" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" fill="#B45309">Temporal Inputs</text>
+      <text x="12" y="38" font-family="system-ui, sans-serif" font-size="9" fill="#78350F">Birth Date, City, Timezone</text>
+      <text x="12" y="52" font-family="'IBM Plex Mono', monospace" font-size="8.5" fill="#D97706">Julian Day Calculation</text>
+    </g>
+
+    <g transform="translate(16, 134)">
+      <rect width="178" height="88" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" />
+      <text x="12" y="20" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" fill="#0F172A">Celestial Algorithms</text>
+      <text x="12" y="38" font-family="system-ui, sans-serif" font-size="9" fill="#475569">&#8226; Lunar Phase (Synodic 29.53d)</text>
+      <text x="12" y="54" font-family="system-ui, sans-serif" font-size="9" fill="#475569">&#8226; Tropical Western Zodiac</text>
+      <text x="12" y="70" font-family="system-ui, sans-serif" font-size="9" fill="#475569">&#8226; Chinese Sexagenary cycle</text>
+    </g>
+
+    <g transform="translate(16, 234)">
+      <rect width="178" height="80" rx="6" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1" />
+      <text x="12" y="20" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" fill="#1D4ED8">Historical News &amp; Cost</text>
+      <text x="12" y="38" font-family="system-ui, sans-serif" font-size="9" fill="#2563EB">&#8226; Inflation multiplier engine</text>
+      <text x="12" y="54" font-family="system-ui, sans-serif" font-size="9" fill="#2563EB">&#8226; Headline archive matching</text>
+      <text x="12" y="68" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#15803D">&#8226; High-precision historical cache</text>
+    </g>
+  </g>
+
+  <!-- ARROW 1 -->
+  <g transform="translate(250, 180)">
+    <line x1="0" y1="0" x2="45" y2="0" stroke="#F59E0B" stroke-width="2" />
+    <polygon points="45,0 37,-4 37,4" fill="#F59E0B" />
+    <text x="22" y="-8" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#B45309" text-anchor="middle">SEED_PARAM</text>
+  </g>
+
+  <!-- LAYER 2: Web Audio Synthesizer Graph -->
+  <g transform="translate(295, 95)">
+    <rect width="210" height="325" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" filter="url(#glow-interactive)" />
+    <rect width="210" height="42" rx="8" fill="#FDF4FF" />
+    <path d="M 0 42 L 210 42" stroke="#FAE8FF" stroke-width="1" />
+    <circle cx="20" cy="21" r="5" fill="#C026D3" />
+    <text x="34" y="25" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="600" fill="#86198F">2. Web Audio Graph</text>
+
+    <g transform="translate(16, 56)">
+      <rect width="178" height="66" rx="6" fill="#FDF4FF" stroke="#F0ABFC" stroke-width="1" />
+      <text x="12" y="20" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" fill="#A21CAF">Oscillator Node Bank</text>
+      <text x="12" y="38" font-family="system-ui, sans-serif" font-size="8.5" fill="#701A75">Sine + Triangle ambient drone</text>
+      <text x="12" y="52" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#A21CAF">Frequency: Base f0 (432Hz harmonic)</text>
+    </g>
+
+    <g transform="translate(16, 132)">
+      <rect width="178" height="80" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" />
+      <text x="12" y="20" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" fill="#0F172A">Dynamic DSP Chain</text>
+      <text x="12" y="38" font-family="system-ui, sans-serif" font-size="8.5" fill="#475569">&#8226; Biquad lowpass filter (800Hz)</text>
+      <text x="12" y="54" font-family="system-ui, sans-serif" font-size="8.5" fill="#475569">&#8226; Exponential gain ramp</text>
+      <text x="12" y="70" font-family="system-ui, sans-serif" font-size="8.5" fill="#475569">&#8226; Algorithmic convolver reverb</text>
+    </g>
+
+    <g transform="translate(16, 224)">
+      <rect width="178" height="74" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1" />
+      <text x="12" y="20" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" fill="#065F46">User Playback Bus</text>
+      <text x="12" y="38" font-family="system-ui, sans-serif" font-size="8.5" fill="#047857">AudioContext state resumed on click</text>
+      <text x="12" y="52" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#059669">&#8226; Seamless looping ambient score</text>
+      <text x="12" y="66" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#059669">&#8226; 0 latency stutter-free audio</text>
+    </g>
+  </g>
+
+  <!-- ARROW 2 -->
+  <g transform="translate(505, 230)">
+    <line x1="0" y1="0" x2="45" y2="0" stroke="#059669" stroke-width="2" />
+    <polygon points="45,0 37,-4 37,4" fill="#059669" />
+    <text x="22" y="-8" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#059669" text-anchor="middle">RENDER_SYNC</text>
+  </g>
+
+  <!-- LAYER 3: High-DPI Canvas Keepsake Generator -->
+  <g transform="translate(550, 85)">
+    <rect width="210" height="340" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" filter="url(#glow-interactive)" />
+    <rect width="210" height="42" rx="8" fill="#ECFDF5" />
+    <path d="M 0 42 L 210 42" stroke="#D1FAE5" stroke-width="1" />
+    <circle cx="20" cy="21" r="5" fill="#10B981" />
+    <text x="34" y="25" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="600" fill="#065F46">3. Keepsake Canvas</text>
+
+    <g transform="translate(16, 56)">
+      <rect width="178" height="90" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1" />
+      <text x="12" y="20" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" fill="#047857">HTML5 Canvas 2D</text>
+      <text x="12" y="38" font-family="system-ui, sans-serif" font-size="8.5" fill="#065F46">DevicePixelRatio scale (2x/3x)</text>
+      <text x="12" y="54" font-family="system-ui, sans-serif" font-size="8.5" fill="#065F46">Crisp 300 DPI export matrix</text>
+      <text x="12" y="70" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#059669">&#8226; Print-ready poster resolution</text>
+    </g>
+
+    <g transform="translate(16, 156)">
+      <rect width="178" height="150" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" />
+      <text x="12" y="20" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" fill="#0F172A">Compositing Layers</text>
+      <text x="12" y="40" font-family="system-ui, sans-serif" font-size="8.5" fill="#475569">1. Vintage grid background</text>
+      <text x="12" y="58" font-family="system-ui, sans-serif" font-size="8.5" fill="#475569">2. Vector celestial moon map</text>
+      <text x="12" y="76" font-family="system-ui, sans-serif" font-size="8.5" fill="#475569">3. Nostalgic typography typesetting</text>
+      <text x="12" y="94" font-family="system-ui, sans-serif" font-size="8.5" fill="#475569">4. Gold foil stamp watermark</text>
+      <rect x="12" y="108" width="154" height="26" rx="4" fill="#0F172A" />
+      <text x="89" y="125" font-family="'IBM Plex Mono', monospace" font-size="8.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">Client-Side PNG Download</text>
+    </g>
+  </g>
+
+  <!-- Bottom Legend Footer -->
+  <g transform="translate(40, 460)">
+    <text x="0" y="12" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#94A3B8">STATUS: PRODUCTION ACTIVE &#8226; REAL-TIME WEB AUDIO SYNTHESIS &#8226; HIGH-DPI CANVAS RENDER</text>
+  </g>
+</svg>

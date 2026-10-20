@@ -1,62 +1,104 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
-import { fadeInUp, staggerContainer } from "@/lib/motion";
+import { Download, Mail } from "lucide-react";
+import { siteConfig } from "@/content/meta";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen bg-ed-offwhite text-ed-black pt-32 pb-20 flex flex-col justify-center">
-      <motion.div 
-        className="container-spacious grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center"
-        initial="hidden"
-        animate="visible"
-        variants={staggerContainer}
-      >
-        
-        {/* LEFT COLUMN: Massive Typography */}
-        <div className="col-span-1 lg:col-span-8 flex flex-col justify-center">
-          <motion.div variants={fadeInUp} className="font-editorial-mono mb-6 text-ed-grey-dark flex items-center gap-4">
-            <span className="w-8 h-[1px] bg-ed-grey-dark"></span>
-            SOFTWARE ENGINEER PORTFOLIO &copy; 2026
-          </motion.div>
-          <motion.h1 
-            variants={fadeInUp} 
-            // clamp size so it looks great on mobile without overflowing
-            className="font-editorial-display text-[clamp(4rem,10vw,11rem)] flex flex-col leading-[0.9]"
-          >
-            <span>ENGINEER</span>
-            <span>BUILDER</span>
-            <span className="text-ed-accent">CREATOR</span>
-          </motion.h1>
-        </div>
+    <section id="home" className="pt-10 md:pt-16 pb-16 md:pb-24 border-b border-[#e5e5e5]">
+      {/* Greeting Title */}
+      <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#242424] font-normal tracking-tight mb-10 md:mb-14">
+        Hi, I&apos;m Abishek
+      </h1>
 
-        {/* RIGHT COLUMN: Image & Intro */}
-        <div className="col-span-1 lg:col-span-4 flex flex-col gap-10">
-          
-          {/* Portrait Image */}
-          <motion.div 
-            variants={fadeInUp}
-            className="relative w-full aspect-[4/5] bg-ed-grey overflow-hidden rounded-sm"
-          >
-            <Image 
-              src="/images/media/abishek_portrait.jpg" 
-              alt="Abishek portrait" 
-              fill 
-              className="img-editorial grayscale hover:grayscale-0 transition-all duration-700" 
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-start">
+        {/* Left Column: Portrait */}
+        <div className="md:col-span-4 lg:col-span-3">
+          <div className="relative aspect-[4/5] w-full rounded-md overflow-hidden bg-[#faf2f0] shadow-sm border border-[#e8deda]">
+            <Image
+              src="/images/media/abishek_portrait.jpg"
+              alt={siteConfig.name}
+              fill
+              priority
+              className="object-cover object-top hover:scale-105 transition-transform duration-500"
             />
-          </motion.div>
-
-          {/* Intro Text */}
-          <motion.div variants={fadeInUp} className="flex flex-col gap-4">
-            <div className="font-editorial-mono text-ed-accent">01 / INTRO</div>
-            <p className="font-editorial-body text-lg text-ed-grey-dark max-w-md">
-              Abishek P S is a software engineer building distributed systems, developer tools, and complex architectures. Based in Hyderabad, India.
-            </p>
-          </motion.div>
-          
+          </div>
         </div>
-      </motion.div>
+
+        {/* Center Column: Bio paragraphs */}
+        <div className="md:col-span-8 lg:col-span-5 text-[#333333] text-base md:text-[1.05rem] leading-relaxed space-y-4">
+          <p>
+            I am a <strong>Computer Science Engineering student</strong> at{" "}
+            {siteConfig.education.institution}, focused on software development, AI-Native Software
+            Engineering, AI/ML Automation &amp; Agents, full-stack web development, and problem solving.
+          </p>
+          <p>
+            {siteConfig.description}
+          </p>
+          <p className="text-[#595959]">
+            Actively building and deploying full-stack web applications, exploring AI-assisted workflows,
+            and strengthening core fundamentals in Java, Python, and Data Structures &amp; Algorithms.
+          </p>
+        </div>
+
+        {/* Right Column: Personal Information Card */}
+        <div className="md:col-span-12 lg:col-span-4 bg-[#faf7f5] border border-[#ebdcd7] rounded-lg p-6">
+          <h2 className="font-mono text-lg font-semibold text-[#242424] mb-4 pb-2 border-b border-[#eadbd6]">
+            Personal Information
+          </h2>
+          <ul className="space-y-3 font-sans text-sm text-[#444444]">
+            <li>
+              <strong className="text-[#242424]">Name:</strong> {siteConfig.name}
+            </li>
+            <li>
+              <strong className="text-[#242424]">Role:</strong> {siteConfig.title}
+            </li>
+            <li>
+              <strong className="text-[#242424]">Location:</strong> {siteConfig.location}
+            </li>
+            <li>
+              <strong className="text-[#242424]">Email:</strong>{" "}
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="text-[#d55121] hover:underline hover:text-[#ab5232] font-mono text-xs sm:text-sm break-all"
+              >
+                {siteConfig.email}
+              </a>
+            </li>
+            <li>
+              <strong className="text-[#242424]">Contact:</strong>{" "}
+              <a
+                href={`tel:${siteConfig.phoneRaw}`}
+                className="text-[#d55121] hover:underline hover:text-[#ab5232] font-mono text-xs sm:text-sm"
+              >
+                {siteConfig.phone}
+              </a>
+            </li>
+            <li>
+              <strong className="text-[#242424]">Degree:</strong> B.E. CSE (Class of 2029)
+            </li>
+            <li>
+              <strong className="text-[#242424]">Status:</strong> {siteConfig.availability}
+            </li>
+          </ul>
+
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#d55121] hover:bg-[#ab5232] text-white font-mono text-xs uppercase tracking-wider rounded transition-colors"
+            >
+              <Mail className="w-3.5 h-3.5" /> Contact Me
+            </a>
+            <a
+              href={`mailto:${siteConfig.email}?subject=Resume Request - ${siteConfig.name}`}
+              className="inline-flex items-center gap-2 px-4 py-2.5 bg-white hover:bg-[#faf2f0] text-[#242424] border border-[#d55121] font-mono text-xs uppercase tracking-wider rounded transition-colors"
+            >
+              <Download className="w-3.5 h-3.5 text-[#d55121]" /> Resume
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
